@@ -44,8 +44,26 @@ buildscript {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    implementation 'com.android.support:appcompat-v7:23.3.0'
-    implementation 'com.android.support:support-v4:23.3.0'
+    testImplementation 'junit:junit:4.12'
+
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.hanks:passcodeview:0.1.2'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'com.kevalpatel2106:passcodeview:2.0.0'
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
     compile 'ch.zhaw:facerecognitionlibrary:1.5.3'
+    implementation project(path: ':activation')
+    implementation project(path: ':additionnal')
+    implementation project(path: ':poi-ooxml-3.5-FINAL')
+    implementation project(path: ':poi-ooxml-schemas-3.6')
+    implementation project(path: ':mail')
+    implementation project(path: ':poi-3.5-FINAL')
 }

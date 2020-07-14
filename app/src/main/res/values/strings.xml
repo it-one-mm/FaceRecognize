@@ -17,4 +17,21 @@
     <string name="app_name">Face Recognition</string>
     <string name="training">Training</string>
     <string name="title_activity_fullscreen">FullscreenActivity</string>
+
+    <string name="date_pattern">EEE, d MMM yyyy hh:mm:ss a</string>
+    <string name="pass_code_wrong">Pass Code Wrong!</string>
+    <string name="auth_fail">Authentication Fail!</string>
+    <string name="one_time_pass_code">1234</string>
+    <string name="user_label">Name</string>
+    <string name="save_text">Save</string>
+    <string name="email_label">Email</string>
+    <string name="change_admin_password">Change Admin Password</string>
+    <string name="time_out_label">Time Out Duration</string>
+    <string name="checkInDatePattern">HH:mm</string>
+    <string name="dailyRecordFormat">ddMMyyyy</string>
+    <string name="password_label">Old Password</string>
+    <string name="new_password_label">New Password</string>
+    <string name="out_format">dd MMMM yyyy</string>
+    <string name="in_format">dd/MM/yyyy</string>
+    <string name="report_out_pattern">dd MMMM</string>
 </resources>

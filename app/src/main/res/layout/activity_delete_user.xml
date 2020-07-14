@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:background="@drawable/bg"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <ImageView
+        android:tint="@color/colorWhite"
+        android:id="@+id/back"
+        android:layout_width="@dimen/icon_height"
+        android:layout_height="@dimen/icon_height"
+        android:src="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/logout"
+        style="@style/BtnTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:drawableRight="@drawable/ic_checkout"
+        android:drawableTint="@color/colorWhite"
+        android:padding="20dp"
+        android:text="Log Out"
+        android:textColor="@color/colorWhite" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/logout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-61dp"
+        android:layout_marginEnd="165dp"
+        android:src="@drawable/ic_delete"
+        android:tint="@color/errorColor" />
+
+    <TextView
+
+        android:id="@+id/date_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:padding="@dimen/top_margin"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/delete_user_rcview_margin"
+        android:id="@+id/rclist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/date_time"/>
+</RelativeLayout>

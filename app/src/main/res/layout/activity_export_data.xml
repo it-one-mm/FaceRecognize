@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:background="@drawable/bg"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <ImageView
+        android:tint="@color/colorWhite"
+        android:id="@+id/back"
+        android:layout_width="@dimen/icon_height"
+        android:layout_height="@dimen/icon_height"
+        android:src="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/logout"
+        style="@style/BtnTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:drawableRight="@drawable/ic_checkout"
+        android:drawableTint="@color/colorWhite"
+        android:padding="20dp"
+        android:text="Log Out"
+        android:textColor="@color/colorWhite" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/logout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-49dp"
+        android:layout_marginEnd="162dp"
+        android:src="@drawable/ic_export_data"
+        android:tint="@color/colorWhite" />
+
+    <TextView
+
+        android:id="@+id/date_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:padding="@dimen/top_margin"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/fromdatePanel"
+        android:layout_marginTop="@dimen/date_range_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_time">
+        <TextView
+            style="@style/BtnTheme"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="20dp"
+            android:text="From:\t"
+            android:textColor="@color/successColor" />
+        <TextView
+            android:id="@+id/fromdate"
+            style="@style/BtnTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="20dp"
+            android:text="1 May June 2020"
+            android:textColor="@color/passCodeColor"
+            />
+        <ImageView
+            android:id="@+id/fromdatepicker"
+            android:layout_width="@dimen/calent_height"
+            android:layout_height="@dimen/calent_height"
+            android:src="@drawable/ic_daterange"
+            android:layout_gravity="center"
+            android:tint="@color/passCodeColor">
+
+        </ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/todatePanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fromdatePanel">
+        <TextView
+            style="@style/BtnTheme"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="20dp"
+            android:text="To:\t\t"
+            android:textColor="@color/successColor" />
+        <TextView
+            android:id="@+id/todate"
+            style="@style/BtnTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="20dp"
+            android:text="1 May June 2020"
+            android:textColor="@color/passCodeColor"
+            />
+        <ImageView
+            android:id="@+id/todatepicker"
+            android:layout_width="@dimen/calent_height"
+            android:layout_height="@dimen/calent_height"
+            android:src="@drawable/ic_daterange"
+            android:layout_gravity="center"
+            android:tint="@color/passCodeColor">
+
+        </ImageView>
+    </LinearLayout>
+    <Button
+        android:layout_below="@id/todatePanel"
+        android:id="@+id/sendReport"
+        style="@style/BtnTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/btnbg"
+        android:backgroundTint="@color/successColor"
+        android:drawableLeft="@drawable/ic_sendnow"
+        android:elevation="@dimen/dp_10"
+        android:paddingLeft="20dp"
+        android:text="Send Now"
+        android:textColor="@color/colorWhite" />
+    <Button
+        android:layout_below="@id/sendReport"
+        android:id="@+id/btnresend"
+        style="@style/BtnTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/btnbg"
+        android:backgroundTint="@color/warningColor"
+        android:drawableLeft="@drawable/ic_resend"
+        android:elevation="@dimen/dp_10"
+        android:paddingLeft="20dp"
+        android:text="Resend Last Month"
+        android:textColor="@color/colorWhite" />
+</RelativeLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:tint="@color/colorWhite"
+        android:id="@+id/back"
+        android:layout_width="@dimen/icon_height"
+        android:layout_height="@dimen/icon_height"
+        android:src="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/logout"
+        style="@style/BtnTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:drawableRight="@drawable/ic_checkout"
+        android:drawableTint="@color/colorWhite"
+        android:padding="20dp"
+        android:text="Log Out"
+        android:textColor="@color/colorWhite" />
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/logout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-47dp"
+        android:layout_marginEnd="152dp"
+        android:src="@drawable/ic_setting"
+        android:tint="@color/colorWhite" />
+
+    <TextView
+
+        android:id="@+id/date_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:padding="@dimen/top_margin"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/userEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_time"
+        android:layout_marginHorizontal="@dimen/admin_horizontal_margin"
+        android:layout_marginTop="50dp"
+        android:hint="@string/email_label"
+        app:hintTextColor="@color/passCodeColor"
+        app:startIconDrawable="@drawable/ic_email"
+        app:startIconTint="@color/passCodeColor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtemail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColorHint="@color/passCodeColor" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/timeout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userEmail"
+        android:layout_marginHorizontal="@dimen/admin_horizontal_margin"
+        android:layout_marginTop="50dp"
+        android:hint="@string/time_out_label"
+        app:hintTextColor="@color/passCodeColor"
+        app:startIconDrawable="@drawable/ic_timeout"
+        app:startIconTint="@color/passCodeColor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/edttimeout"
+            android:layout_height="50dp"
+            android:textColorHint="@color/passCodeColor" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/changepassword"
+        style="@style/BtnTheme"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timeout"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btnbg"
+        android:backgroundTint="@color/warningColor"
+        android:drawableLeft="@drawable/ic_password"
+        android:elevation="@dimen/dp_10"
+        android:paddingLeft="20dp"
+        android:text="@string/change_admin_password"
+        android:textColor="@color/colorWhite" />
+
+
+    <Button
+        android:id="@+id/btnsave"
+        android:drawableLeft="@drawable/ic_save"
+        style="@style/BtnTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/changepassword"
+        android:layout_marginHorizontal="@dimen/admin_horizontal_margin"
+        android:layout_marginTop="@dimen/top_margin"
+        android:background="@drawable/btnbg"
+        android:backgroundTint="@color/successColor"
+        android:padding="10dp"
+        android:paddingBottom="20dp"
+        android:text="@string/save_text"
+        android:textColor="@color/colorWhite" />
+
+
+</RelativeLayout>

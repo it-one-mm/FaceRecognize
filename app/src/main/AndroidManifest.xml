@@ -30,6 +30,14 @@
     <uses-feature
         android:name="android.hardware.camera.front.autofocus"
         android:required="false" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" ></uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" ></uses-permission>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" ></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
 
     <application
         android:allowBackup="true"
@@ -40,13 +48,13 @@
         <activity
             android:name=".Activities.MainActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".Activities.RecognitionActivity"
@@ -75,6 +83,39 @@
             android:name=".Activities.DetectionActivity"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
+
+
+        <activity android:name=".SettingActivity"
+            android:parentActivityName=".AdminActivity"></activity>
+
+        <activity
+            android:name=".ExportDataActivity"
+            android:parentActivityName=".AdminActivity" />
+        <activity
+            android:name=".DeleteUserActivity"
+            android:parentActivityName=".AdminActivity" />
+        <activity
+            android:name=".AddUserActivity"
+            android:parentActivityName=".AdminActivity" />
+        <activity android:name=".AdminActivity" />
+        <activity android:name=".PassCodeActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".StartActivityOnBootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".SendAbsentReceiver"
+            android:exported="true"/>
     </application>
 
 </manifest>

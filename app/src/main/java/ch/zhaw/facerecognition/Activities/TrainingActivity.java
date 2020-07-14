@@ -87,7 +87,14 @@ public class TrainingActivity extends Activity {
                                         Mat imgRgb = Imgcodecs.imread(file.getAbsolutePath());
                                         Imgproc.cvtColor(imgRgb, imgRgb, Imgproc.COLOR_BGRA2RGBA);
                                         Mat processedImage = new Mat();
-                                        imgRgb.copyTo(processedImage);
+                                       if(!imgRgb.isContinuous())
+                                       {
+                                           processedImage=imgRgb.clone();
+                                       }
+                                       else
+                                       {
+                                           imgRgb.copyTo(processedImage);
+                                       }
                                         List<Mat> images = ppF.getProcessedImage(processedImage, PreProcessorFactory.PreprocessingMode.RECOGNITION);
                                         if (images == null || images.size() > 1) {
                                             // More than 1 face detected --> cannot use this file for training
@@ -124,17 +131,18 @@ public class TrainingActivity extends Activity {
                                 }
                             }
                         }
-                        final Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        /*final Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         if (rec.train()) {
                             intent.putExtra("training", "Training successful");
                         } else {
                             intent.putExtra("training", "Training failed");
-                        }
+                        }*/
                         handler.post(new Runnable() {
                             @Override
                             public void run() {
-                                startActivity(intent);
+                                /*startActivity(intent);*/
+                                onBackPressed();
                             }
                         });
                     } else {

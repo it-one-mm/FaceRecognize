@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:tint="@color/passCodeColor"
+            android:id="@+id/back"
+            android:layout_width="@dimen/icon_height"
+            android:layout_height="@dimen/icon_height"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/logout"
+            style="@style/BtnTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:drawableRight="@drawable/ic_checkout"
+            android:drawableTint="@color/passCodeColor"
+            android:padding="20dp"
+            android:text="Log Out"
+            android:textColor="@color/passCodeColor" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/logout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="149dp"
+            android:layout_marginTop="-50dp"
+            android:layout_marginEnd="162dp"
+            android:src="@drawable/ic_add_user"
+            android:tint="@color/passCodeColor" />
+
+        <TextView
+
+            android:id="@+id/date_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:padding="@dimen/top_margin"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="@color/passCodeColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date_time"
+            android:layout_marginHorizontal="@dimen/admin_horizontal_margin"
+            android:layout_marginTop="50dp"
+            android:hint="@string/user_label"
+            app:hintTextColor="@color/passCodeColor"
+            app:startIconDrawable="@drawable/ic_user"
+            app:startIconTint="@color/passCodeColor">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userNameData"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColorHint="@color/passCodeColor" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnaddface"
+            android:onClick="addFace"
+            style="@style/BtnTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userName"
+            android:layout_marginHorizontal="@dimen/admin_horizontal_margin"
+            android:layout_marginTop="@dimen/top_margin"
+            android:background="@drawable/btnbg"
+            android:backgroundTint="@color/passCodeColor"
+            android:drawableLeft="@drawable/ic_face_scan"
+            android:padding="10dp"
+            android:paddingLeft="30dp"
+            android:text="Add Face"
+            android:textColor="@color/colorWhite" />
+
+
+
+
+        <Button
+            android:id="@+id/btnsave"
+            android:drawableLeft="@drawable/ic_save"
+            style="@style/BtnTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnaddface"
+            android:layout_marginHorizontal="@dimen/admin_horizontal_margin"
+            android:layout_marginTop="@dimen/top_margin"
+            android:background="@drawable/btnbg"
+            android:backgroundTint="@color/successColor"
+            android:padding="10dp"
+            android:paddingBottom="20dp"
+            android:text="@string/save_text"
+            android:textColor="@color/colorWhite" />
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btnsaveface"
+            style="@style/BtnTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnsave"
+            android:layout_marginHorizontal="@dimen/admin_horizontal_margin"
+            android:layout_marginTop="@dimen/top_margin"
+            android:background="@drawable/btnbg"
+            android:backgroundTint="@color/passCodeColor"
+            android:drawableLeft="@drawable/ic_face_scan"
+            android:onClick="saveFace"
+            android:padding="10dp"
+            android:paddingLeft="30dp"
+            android:text="Save Face"
+            android:textColor="@color/colorWhite" />
+    </RelativeLayout>
+</ScrollView>

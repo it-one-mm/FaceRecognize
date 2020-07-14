@@ -40,8 +40,9 @@ import ch.zhaw.facerecognitionlibrary.Recognition.Recognition;
 import ch.zhaw.facerecognitionlibrary.Recognition.RecognitionFactory;
 
 public class TrainingActivity extends Activity {
-    private static final String TAG = "Training";
     TextView progress;
+    private static final String TAG = "Training";
+
     Thread thread;
 
     static {

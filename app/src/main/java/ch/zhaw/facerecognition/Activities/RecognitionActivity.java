@@ -18,6 +18,7 @@ package ch.zhaw.facerecognition.Activities;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -35,6 +36,7 @@ import org.opencv.core.Rect;
 import java.io.File;
 import java.util.List;
 
+import ch.zhaw.facerecognition.MainActivity;
 import ch.zhaw.facerecognitionlibrary.Helpers.CustomCameraView;
 import ch.zhaw.facerecognitionlibrary.Helpers.FileHelper;
 import ch.zhaw.facerecognitionlibrary.Helpers.MatOperation;
@@ -43,6 +45,7 @@ import ch.zhaw.facerecognitionlibrary.PreProcessor.PreProcessorFactory;
 import ch.zhaw.facerecognition.R;
 import ch.zhaw.facerecognitionlibrary.Recognition.Recognition;
 import ch.zhaw.facerecognitionlibrary.Recognition.RecognitionFactory;
+import es.dmoral.toasty.Toasty;
 
 public class RecognitionActivity extends Activity implements CameraBridgeViewBase.CvCameraViewListener2 {
     private CustomCameraView mRecognitionView;
@@ -116,7 +119,7 @@ public class RecognitionActivity extends Activity implements CameraBridgeViewBas
         }
 
         if (exposure_compensation != 50 && 0 <= exposure_compensation && exposure_compensation <= 100)
-        mRecognitionView.setExposure(exposure_compensation);
+            mRecognitionView.setExposure(exposure_compensation);
     }
 
     public void onCameraViewStopped() {
@@ -125,7 +128,7 @@ public class RecognitionActivity extends Activity implements CameraBridgeViewBas
     public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
         Mat imgRgba = inputFrame.rgba();
         Mat img = new Mat();
-        imgRgba.copyTo(img);
+        imgRgba.push_back(img);
         List<Mat> images = ppF.getProcessedImage(img, PreProcessorFactory.PreprocessingMode.RECOGNITION);
         Rect[] faces = ppF.getFacesForRecognition();
 
